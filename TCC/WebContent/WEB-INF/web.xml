@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>TCC1</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>controladora</servlet-name>
+    <servlet-class>br.com.ffsd.tcc.servlet.ControllerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>controladora</servlet-name>
+    <url-pattern>/mvc</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>controladoraLogado</servlet-name>
+    <servlet-class>br.com.ffsd.tcc.servlet.ControllerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>controladoraLogado</servlet-name>
+    <url-pattern>/logado/mvc</url-pattern>
+  </servlet-mapping>
+  
+    <filter>
+            <filter-name>Filtro Seguranca</filter-name>
+            <filter-class>br.com.ffsd.tcc.filter.FiltroSeguranca</filter-class>
+    </filter>
+    <filter-mapping>
+    	<filter-name>Filtro Seguranca</filter-name>
+    	<url-pattern>/logado/*</url-pattern>
+    </filter-mapping>
+    
+    <filter>
+            <filter-name>Filtro Conexão</filter-name>
+            <filter-class>br.com.ffsd.tcc.filter.FiltroConexao</filter-class>
+    </filter>
+    <filter-mapping>
+    	<filter-name>Filtro Conexão</filter-name>
+    	<url-pattern>/*</url-pattern>
+    </filter-mapping>
+  
+</web-app>

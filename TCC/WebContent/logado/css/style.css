@@ -1,0 +1,9 @@
+footer {
+	position: fixed;
+	overflow: hidden;
+	text-align: center
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
